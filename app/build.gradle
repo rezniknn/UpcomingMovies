@@ -1,0 +1,79 @@
+apply plugin: 'com.android.application'
+
+apply plugin: 'kotlin-android'
+
+apply plugin: 'kotlin-android-extensions'
+
+apply plugin: 'kotlin-kapt'
+
+android {
+    compileSdkVersion 27
+    defaultConfig {
+        applicationId "com.alexeyreznik.movies"
+        minSdkVersion 21
+        targetSdkVersion 27
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    dataBinding {
+        enabled = true
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    //Support libs
+    implementation "com.android.support:appcompat-v7:$support_lib_version"
+    implementation "com.android.support:design:$support_lib_version"
+    implementation "com.android.support:support-v4:$support_lib_version"
+    implementation "com.android.support:cardview-v7:$support_lib_version"
+
+    //ViewModel
+    implementation "android.arch.lifecycle:extensions:$lifecycle_version"
+
+    //DataBinding
+    kapt "com.android.databinding:compiler:$data_binding_version"
+
+    //RxJava
+    implementation "io.reactivex.rxjava2:rxjava:$rxandroid_version"
+    implementation "io.reactivex.rxjava2:rxandroid:$rxandroid_version"
+
+    //Koin
+    implementation "org.koin:koin-android:$koin_version"
+    implementation "org.koin:koin-android-viewmodel:$koin_version"
+
+    //Retrofit
+    implementation "com.squareup.retrofit2:retrofit:$retrofit_version"
+    implementation "com.squareup.retrofit2:adapter-rxjava2:$retrofit_version"
+    implementation "com.squareup.retrofit2:converter-moshi:$retrofit_version"
+
+    //Moshi
+    implementation "com.squareup.moshi:moshi-kotlin:$moshi_version"
+
+    //OkHTTP logging interceptor
+    implementation "com.squareup.okhttp3:logging-interceptor:$okhttp_logger_version"
+
+    //Timber
+    implementation "com.jakewharton.timber:timber:$timber_version"
+
+    //Picasso
+    implementation "com.squareup.picasso:picasso:$picasso_version"
+
+    //Fake data generator
+    testImplementation "uk.co.jemos.podam:podam:$podam_version"
+
+    testImplementation "junit:junit:$junit_version"
+
+    androidTestImplementation "com.android.support.test:runner:$test_runner_version"
+    androidTestImplementation "com.android.support.test.espresso:espresso-core:$espresso_version"
+
+    testImplementation "org.mockito:mockito-core:$mockito_version"
+}

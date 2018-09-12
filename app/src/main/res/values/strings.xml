@@ -1,0 +1,9 @@
+<resources>
+    <string name="tmdb_base_url" translatable="false">https://api.themoviedb.org/</string>
+    <string name="tmdb_api_key" translatable="false">2797622c548aa4f022b045c4b05b5585</string>
+    <string name="app_name" translatable="false">Movies</string>
+
+    <string name="title_upcoming">Upcoming Movies</string>
+    <string name="popularity">Popularity</string>
+    <string name="language">Language</string>
+</resources>
