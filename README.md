@@ -12,3 +12,7 @@ Key features:
 - RecyclerView
 - Master-Detail Flow
 - Unit Tests (JUnit, Mockito)
+
+Screenshots:
+
+![Alt text](./screenshot.png)
